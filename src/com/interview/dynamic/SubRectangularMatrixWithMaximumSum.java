@@ -84,6 +84,7 @@ public class SubRectangularMatrixWithMaximumSum {
             if(maxSoFar < 0){
                 maxSoFar = 0;
                 currentStart = i+1;
+                continue;
             }
             if(max < maxSoFar){
                 maxStart = currentStart;
@@ -101,6 +102,14 @@ public class SubRectangularMatrixWithMaximumSum {
                          { 2, -2, -1,  4, -5},
                          {-3,  3,  1,  0,  3}};
         SubRectangularMatrixWithMaximumSum saw = new SubRectangularMatrixWithMaximumSum();
-        System.out.println(saw.maxSum(input));
+
+        long beginTime = System.currentTimeMillis();
+        for (int i = 0; i < 10000 ; i++) {
+            System.out.println(saw.maxSum(input));
+        }
+        long endTime = System.currentTimeMillis();
+
+        System.out.println("total time :" + (endTime-beginTime));
+
     }       
 }
